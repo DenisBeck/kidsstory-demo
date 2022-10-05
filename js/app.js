@@ -3537,7 +3537,7 @@
                             const codeVideo = this.youTubeCode;
                             const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
                             const iframe = document.createElement("iframe");
-                            iframe.setAttribute("allowfullscreen", "");
+                            iframe.setAttribute("allowfullscreen", "true");
                             const autoplay = this.options.setAutoplayYoutube ? "autoplay;" : "";
                             iframe.setAttribute("allow", `${autoplay}; encrypted-media`);
                             iframe.setAttribute("src", urlVideo);
@@ -7517,9 +7517,14 @@
                 pagination: {
                     el: ".images-food__bottom",
                     clickable: true,
-                    type: "bullets",
-                    renderBullet: function(index, className) {
-                        return '<div class="bottom-food__slide swiper-slide ' + className + '"><img src="/img/food/0' + ++index + '.jpg" alt="food image ' + ++index + '"></div>';
+                    type: "custom",
+                    renderCustom: function(foodSlider, current, total) {
+                        const slides = document.querySelectorAll(".images-food__slider .swiper-wrapper .swiper-slide");
+                        const items = [];
+                        for (let i = 0; i < slides.length; i++) items.push(slides[i].innerHTML);
+                        let text = "";
+                        for (let i = 0; i < total; i++) if (current == i) text += `<div class="bottom-food__slide swiper-slide swiper-pagination-bullet swiper-pagination-bullet-active">${items[i]}</div>`; else text += `<div class="bottom-food__slide swiper-slide swiper-pagination-bullet">${items[i]}</div>`;
+                        return text;
                     }
                 },
                 on: {}
