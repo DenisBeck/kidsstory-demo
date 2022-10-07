@@ -2475,6 +2475,7 @@ body::after {
 
 .swiper .schedule-add__column {
   padding: 0 0.625rem;
+  height: 100%;
 }
 
 @supports (font-size: clamp( 0.625rem , 0.5542035398rem  +  0.3539823009vw , 0.875rem )) {
@@ -2505,7 +2506,7 @@ body::after {
   height: 100%;
 }
 
-.schedule-add__column_first {
+.schedule-add__column_first.schedule-add__column {
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
@@ -2516,20 +2517,20 @@ body::after {
 }
 
 @supports (flex-basis: clamp( 10.5rem , 8.7300884956rem  +  8.8495575221vw , 16.75rem )) {
-  .schedule-add__column_first {
+  .schedule-add__column_first.schedule-add__column {
     -ms-flex-preferred-size: clamp( 10.5rem , 8.7300884956rem  +  8.8495575221vw , 16.75rem );
         flex-basis: clamp( 10.5rem , 8.7300884956rem  +  8.8495575221vw , 16.75rem );
   }
 }
 
 @supports not (flex-basis: clamp( 10.5rem , 8.7300884956rem  +  8.8495575221vw , 16.75rem )) {
-  .schedule-add__column_first {
+  .schedule-add__column_first.schedule-add__column {
     -ms-flex-preferred-size: calc(10.5rem + 6.25 * (100vw - 20rem) / 70.625);
         flex-basis: calc(10.5rem + 6.25 * (100vw - 20rem) / 70.625);
   }
 }
 
-.schedule-add__column_first span {
+.schedule-add__column_first.schedule-add__column span {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -5695,6 +5696,13 @@ body::after {
   }
 }
 
+@media (max-width: 1450px) {
+  .schedule-add__column {
+    -ms-flex-preferred-size: 16.6666666667%;
+        flex-basis: 16.6666666667%;
+  }
+}
+
 @media (max-width: 1262px) {
   .schedule-add__column {
     -ms-flex-preferred-size: 20%;
@@ -5867,11 +5875,6 @@ body::after {
 
   .schedule-add__navigation:not(:last-child) {
     margin-bottom: 0.625rem;
-  }
-
-  .schedule-add__column {
-    -ms-flex-preferred-size: 16.6666666667%;
-        flex-basis: 16.6666666667%;
   }
 
   .service__row {

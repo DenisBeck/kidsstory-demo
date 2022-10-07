@@ -7442,35 +7442,43 @@
                 observer: true,
                 observeParents: true,
                 slidesPerView: 7,
+                slidesPerGroup: 1,
                 spaceBetween: 0,
                 autoHeight: true,
                 speed: 800,
                 allowTouchMove: false,
                 navigation: {
-                    prevEl: ".swiper-button-prev",
-                    nextEl: ".swiper-button-next"
+                    prevEl: ".schedule-add__button_prev",
+                    nextEl: ".schedule-add__button_next"
                 },
                 breakpoints: {
                     320: {
-                        slidesPerView: 1
+                        slidesPerView: 1,
+                        slidesPerGroup: 1
                     },
                     508: {
-                        slidesPerView: 2
+                        slidesPerView: 2,
+                        slidesPerGroup: 1
                     },
                     696: {
-                        slidesPerView: 3
+                        slidesPerView: 3,
+                        slidesPerGroup: 1
                     },
                     885: {
-                        slidesPerView: 4
+                        slidesPerView: 4,
+                        slidesPerGroup: 1
                     },
                     1073: {
-                        slidesPerView: 5
+                        slidesPerView: 5,
+                        slidesPerGroup: 1
                     },
                     1262: {
-                        slidesPerView: 6
+                        slidesPerView: 6,
+                        slidesPerGroup: 1
                     },
                     1450: {
-                        slidesPerView: 7
+                        slidesPerView: 7,
+                        slidesPerGroup: 1
                     }
                 },
                 on: {}
